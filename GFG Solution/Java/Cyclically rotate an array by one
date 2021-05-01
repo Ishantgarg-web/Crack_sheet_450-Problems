@@ -1,0 +1,14 @@
+// Problem link: Write a program to cyclically rotate an array by one.
+
+class Compute {
+    
+    public void rotate(long arr[], long n)
+    {
+        long temp=arr[(int)n-1];
+        for (long i=n-2;i>=0;i--)
+        {
+            arr[(int)i+1]=arr[(int)i];
+        }
+        arr[0]=temp;
+    }
+}
