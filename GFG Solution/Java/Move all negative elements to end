@@ -1,0 +1,30 @@
+Problem link- https://practice.geeksforgeeks.org/problems/move-all-negative-elements-to-end1813/1#
+
+Java Code
+
+class Solution {
+    
+    public void segregateElements(int a[], int n)
+    {
+        // Your code goes here
+        ArrayList<Integer> al=new ArrayList<Integer>();
+        int temp=0;
+        for (int i=0;i<n;i++)
+        {
+            if(a[i]>=0)
+            {
+                a[temp]=a[i];
+                temp++;
+            }
+            else
+            {
+                al.add(a[i]);
+            }
+        }
+        for (int i=0;i<al.size();i++)
+        {
+            a[temp]=al.get(i);
+            temp++;
+        }
+    }
+}
