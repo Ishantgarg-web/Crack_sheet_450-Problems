@@ -1,0 +1,29 @@
+//Problem link: https://practice.geeksforgeeks.org/problems/union-of-two-sorted-arrays/1
+
+//Using TreeSet
+
+class Solution
+{
+    //Function to return a list containing the union of the two arrays.
+    public static ArrayList<Integer> findUnion(int arr1[], int arr2[], int n, int m)
+    {
+        // add your code here
+        TreeSet<Integer> ts=new TreeSet<Integer>();
+        for (int i=0;i<arr1.length;i++)
+        {
+            ts.add(arr1[i]);
+        }
+        for (int i=0;i<arr2.length;i++)
+        {
+            ts.add(arr2[i]);
+        }
+        ArrayList<Integer> al=new ArrayList<Integer>();
+        Iterator<Integer> it=ts.iterator();
+        while(it.hasNext())
+        {
+            al.add(it.next());
+        }
+        
+        return al;
+    }
+}
