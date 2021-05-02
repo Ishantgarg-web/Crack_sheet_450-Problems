@@ -1,0 +1,34 @@
+class Solution{
+
+    // a: input array
+    // n: size of array
+    //Function to find maximum circular subarray sum.
+    static int circularSubarraySum(int a[], int n) {
+        
+        // Your code here
+        //return Integer.max(kadane(a,n), reverseKadane(a,n));
+        
+        int maxending=a[0];
+        int res=a[0];
+        for (int i=1;i<n;i++)
+        {
+            maxending=(int)Math.max(maxending+a[i],a[i]);
+            res=(int)Math.max(res,maxending);
+        }
+        int normalsum=res;
+        int sum=0;
+        for (int i=0;i<n;i++)
+        {
+            sum=sum+a[i];
+        }
+        int minending=0;
+        res=0;
+        for (int i=1;i<n;i++)
+        {
+            minending=(int)Math.min(minending+a[i],a[i]);
+            res=(int)Math.min(res,minending);
+        }
+        return (int)Math.max(normalsum,sum-res);
+    }
+    
+}
